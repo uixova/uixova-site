@@ -1,82 +1,167 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Uixova</title>
-<style>
-  :root {
-    --bg-color-light: #f0f0f0;
-    --text-color-light: #222;
-    --bg-color-dark: #2e2e2e;
-    --text-color-dark: #ddd;
-  }
-  
-  body {
-    background-color: var(--bg-color-light);
-    color: var(--text-color-light);
-    font-family: Arial, sans-serif;
-    margin: 0; padding: 0;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .dark-mode {
-    background-color: var(--bg-color-dark);
-    color: var(--text-color-dark);
-  }
-  
-  header {
-    padding: 20px;
-    text-align: center;
-    background: #888;
-  }
-  
-  header h1 {
-    margin: 0;
-  }
-  
-  .hero {
-    height: 300px;
-    background: url('hero-image.jpg') center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 2em;
-  }
-  
-  main {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-  }
-  
-  button#theme-toggle {
-    position: fixed;
-    top: 20px; right: 20px;
-    padding: 10px 15px;
-    cursor: pointer;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      background-color: #999999;
+      color: #000000;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background: #888;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    .hero {
+      height: 300px;
+      background: url('hero-image.jpg') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-size: 2em;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    /* Dropdown Menü Stilleri */
+    #dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      border: 1px solid #ccc;
+      border-top: none;
+      border-radius: 0 0 6px 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      z-index: 1000;
+    }
+
+    #dropdown-menu li a {
+      display: block;
+      padding: 10px 15px;
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+    }
+
+    #dropdown-menu li a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .content-section {
+      display: none;
+    }
+
+    .content-section.active {
+      display: block;
+    }
+
+    /* Menü butonu */
+    #menu-toggle {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background: white;
+      cursor: pointer;
+      text-align: left;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
-<header>
-  <h1>Uixova</h1>
-</header>
+  <header>
+    <h1 style="margin-top: 40px;">Uixova</h1>
+  </header>
 
-<div class="hero">
-  Hoşgeldin! Buraya güzel bir görsel gelecek.
-</div>
+  <div style="width: 250px; margin: 20px auto; position: relative;">
+    <button id="menu-toggle">Menü ▼</button>
+    <ul id="dropdown-menu">
+      <li><a href="#" data-section="about">Hakkında</a></li>
+      <li><a href="#" data-section="contact">İletişim</a></li>
+      <li><a href="#" data-section="projects">Projeler</a></li>
+      <li><a href="#" data-section="pricing">Fiyatlar</a></li>
+    </ul>
+  </div>
 
-<button id="theme-toggle">Gece Modu</button>
+  <div class="hero">
+    Hoşgeldin! Buraya güzel bir görsel gelecek.
+  </div>
 
-<main>
-  <section id="about">
-    <h2>Hakkında</h2>
-    <p>Buraya kendinle ilgili kısa ama etkili bir yazı yazabilirsin.</p>
-  </section>
-</main>
+  <main>
+    <section id="about" class="content-section active">
+      <h2>Hakkında</h2>
+      <p>Selam, ben Salih. Yazılım ve web tasarım işleriyle uğraşıyorum, kendi yolumu bulmaya çalışıyorum. Amacım kendimi geliştirmek ve yaptığım işin hakkını vermek. Karmaşadan uzak, sade ve anlaşılır işler yapmak hoşuma gidiyor. Burada yaptığım projeleri görebilir, benimle iletişime geçebilirsin.</p>
+    </section>
 
-<script src="script.js"></script>
+    <section id="contact" class="content-section">
+      <h2>İletişim</h2>
+      <p>📞 Telefon: +90 546 140 80 18</p>
+      <p>✉️ E-posta: <a href="mailto:uixova@example.com">uixova.studio@gamil.com</a></p>
+      <p>📍 Adres: Osmaniye, Türkiye</p>
+    </section>
+
+    <section id="projects" class="content-section">
+      <h2>Projeler</h2>
+      <p>Buraya projelerini ekleyebilirsin.</p>
+    </section>
+
+    <section id="pricing" class="content-section">
+      <h2>Fiyatlar</h2>
+      <p>Buraya fiyat bilgilerini yazabilirsin.</p>
+    </section>
+  </main>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const links = dropdownMenu.querySelectorAll('a');
+    const sections = document.querySelectorAll('.content-section');
+
+    menuToggle.addEventListener('click', () => {
+      dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = link.getAttribute('data-section');
+
+        sections.forEach(section => {
+          section.classList.toggle('active', section.id === target);
+        });
+
+        dropdownMenu.style.display = 'none';
+      });
+    });
+
+    document.addEventListener('click', e => {
+      if (!menuToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
