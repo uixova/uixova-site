@@ -1,12 +1,89 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Uixova</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Uixova</title>
+<style>
+  /* Temel gri tonları */
+  :root {
+    --bg-color-light: #f0f0f0;
+    --text-color-light: #222;
+    --bg-color-dark: #2e2e2e;
+    --text-color-dark: #ddd;
+  }
+  
+  body {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .dark-mode {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+  }
+  
+  header {
+    padding: 20px;
+    text-align: center;
+    background: #888;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  .hero {
+    height: 300px;
+    background: url('hero-image.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+  }
+  
+  main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  button#theme-toggle {
+    position: fixed;
+    top: 20px; right: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+</style>
 </head>
 <body>
-  <h1>Uixova'ya Hoş Geldin</h1>
-  <p>Bu ilk sitem knk!</p>
+<header>
+  <h1>Uixova</h1>
+</header>
+
+<div class="hero">
+  Hoşgeldin! Buraya güzel bir görsel gelecek.
+</div>
+
+<button id="theme-toggle">Gece/Gündüz</button>
+
+<main>
+  <section id="about">
+    <h2>Hakkında</h2>
+    <p>Buraya kendinle ilgili kısa ama etkili bir yazı yazabilirsin.</p>
+  </section>
+</main>
+
+<script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+</script>
+
 </body>
 </html>
