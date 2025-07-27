@@ -1,7 +1,11 @@
-body {
-  background-color: #111;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding-top: 100px;
+main {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: black;
+  box-sizing: border-box;
+
+  /* flex kaldır */
+  display: block;
 }
